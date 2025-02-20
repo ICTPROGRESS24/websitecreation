@@ -1,48 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <style>
-            header{
-                background-color: #27445D;
-                color: white;
-                padding: 5px;
-                text-align: center;
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #3E5879;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+            color: #D8C4B6;
+        }
+        
+        .sidenav .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #27445D;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+        
+        header {
+            background-color: #27445D;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        main {
+            padding: 20px;
+            margin-left: 20px;
+        }
+        
+        .card{
+           background: white;
+           border-radius: 8px;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+           margin: 20px;
+           padding: 20px;
             }
             
-            nav{
-                display: flex;
-                justify-content: center;
-                background-color: #3E5879;
-                padding: 10px;
+        h2{
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding: 10px;
             }
-            
-            nav a{
-                margin: 0 15px;
-                color: white;
-                font-weight: bold;
-            }
-            
-            nav a:hover{
-                color: #D8C4B6;
-            }
-            
-            main{
-                padding: 20px;
-            }
-            
-            .card{
-                background: white;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                margin: 20px;
-                padding: 20px;
-            }
-            
-            h2{
-                text-align: center;
-                border-bottom: 1px solid black;
-                padding: 10px;
-            }
-            
+
             table, th, td{
                 border: 1px solid black;
                 text-align: center;
@@ -53,20 +88,24 @@
                 color: white;
                 padding: 10px;
             }
-        </style>
-    </head>
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#table">Members</a>
+        <a href="#aboutus">About Us</a>
+        <a href="#images">Credits</a>
+    </div>
     
-    <body>
-        <header>
-            <h1>OurWebsiteICT.html</h1>
-        </header>
-        <nav>
-            <a href="#table">Members</a>
-            <a href="#aboutus">About Us</a>
-            <a href="#images">Credits</a>
-        </nav>
-        <main>
-            <section id="table">
+    <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+    
+    <header>
+        <h1>OurWebsiteICT.html</h1>
+    </header>
+    
+    <main>
+        <section id="table">
                 <div class="card">
                     <h2>Our Members</h2>
                     <table style="width:100%">
@@ -105,11 +144,16 @@
                             <td>Azares</td>
                             <td>Joshua</td>
                         </tr>
+                                                <tr>
+                            <td>10 Makiling</td>
+                            <td>Calago</td>
+                            <td>Jathniel</td>
+                        </tr>
                     </table>
                 </div>
             </section>
-            
-            <section id="aboutus">
+        
+        <section id="aboutus">
                 <div class="card">
                     <h2>About Us</h2>
                     <p> <b>Hello!</b> I am the creator of this website, <u>Gabrryl Matt Bermudez</u>. My group helped me be motivated enough to continue on making this website and provided me their code knowledge!
@@ -123,7 +167,7 @@
                 </div>
             </section>
             
-            <section id="images">
+                        <section id="images">
                 <div class="card">
                     <h2>Credits</h2>
                     <iframe src="https://colorhunt.co/palette/2135553e5879d8c4b6f5efe7" width="100%" height="300"></iframe>
@@ -131,10 +175,16 @@
                     <p style="font-size: 9px">( If there is no internet connection it will not show you the website! )</p>
                 </div>
             </section>
-        </main>
+    </main>
+    
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
         
-        <footer>
-            <marquee direction="right">&copy Sponsored by <b>Catteevee</b> on Discord!</marquee>
-        </footer>
-    </body>
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
 </html>
